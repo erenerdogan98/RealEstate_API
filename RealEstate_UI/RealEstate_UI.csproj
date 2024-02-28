@@ -70,4 +70,8 @@
     <None Include="wwwroot\starter\starter-license-W3Layouts.txt" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
 </Project>
