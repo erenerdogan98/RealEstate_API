@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\starter\about.html" />
+    <None Include="wwwroot\starter\assets\css\style-starter.css" />
+    <None Include="wwwroot\starter\assets\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\starter\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\starter\assets\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\starter\assets\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\starter\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\starter\assets\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\starter\assets\images\404.svg" />
+    <None Include="wwwroot\starter\assets\images\about.jpg" />
+    <None Include="wwwroot\starter\assets\images\about1.jpg" />
+    <None Include="wwwroot\starter\assets\images\banner.jpg" />
+    <None Include="wwwroot\starter\assets\images\client1.png" />
+    <None Include="wwwroot\starter\assets\images\client2.png" />
+    <None Include="wwwroot\starter\assets\images\client3.png" />
+    <None Include="wwwroot\starter\assets\images\client4.png" />
+    <None Include="wwwroot\starter\assets\images\client5.png" />
+    <None Include="wwwroot\starter\assets\images\client6.png" />
+    <None Include="wwwroot\starter\assets\images\down.png" />
+    <None Include="wwwroot\starter\assets\images\l1.jpg" />
+    <None Include="wwwroot\starter\assets\images\l2.jpg" />
+    <None Include="wwwroot\starter\assets\images\l3.jpg" />
+    <None Include="wwwroot\starter\assets\images\l4.jpg" />
+    <None Include="wwwroot\starter\assets\images\l5.jpg" />
+    <None Include="wwwroot\starter\assets\images\p1.jpg" />
+    <None Include="wwwroot\starter\assets\images\p2.jpg" />
+    <None Include="wwwroot\starter\assets\images\p3.jpg" />
+    <None Include="wwwroot\starter\assets\images\p4.jpg" />
+    <None Include="wwwroot\starter\assets\images\p5.jpg" />
+    <None Include="wwwroot\starter\assets\images\p6.jpg" />
+    <None Include="wwwroot\starter\assets\images\p7.jpg" />
+    <None Include="wwwroot\starter\assets\images\p8.jpg" />
+    <None Include="wwwroot\starter\assets\images\single.jpg" />
+    <None Include="wwwroot\starter\assets\images\stats.jpg" />
+    <None Include="wwwroot\starter\assets\images\team1.jpg" />
+    <None Include="wwwroot\starter\assets\images\team2.jpg" />
+    <None Include="wwwroot\starter\assets\images\team3.jpg" />
+    <None Include="wwwroot\starter\assets\images\team4.jpg" />
+    <None Include="wwwroot\starter\assets\images\team5.jpg" />
+    <None Include="wwwroot\starter\assets\images\team6.jpg" />
+    <None Include="wwwroot\starter\assets\images\Villa1.jpg" />
+    <None Include="wwwroot\starter\assets\images\who.jpg" />
+    <None Include="wwwroot\starter\assets\images\who1.jpg" />
+    <None Include="wwwroot\starter\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\starter\assets\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\starter\assets\js\jquery.countup.js" />
+    <None Include="wwwroot\starter\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\starter\assets\js\jquery.waypoints.min.js" />
+    <None Include="wwwroot\starter\assets\js\owl.carousel.js" />
+    <None Include="wwwroot\starter\assets\js\theme-change.js" />
+    <None Include="wwwroot\starter\contact.html" />
+    <None Include="wwwroot\starter\images\1.jpg" />
+    <None Include="wwwroot\starter\images\2.jpg" />
+    <None Include="wwwroot\starter\images\3.jpg" />
+    <None Include="wwwroot\starter\images\4.jpg" />
+    <None Include="wwwroot\starter\images\5.jpeg" />
+    <None Include="wwwroot\starter\images\6.jpg" />
+    <None Include="wwwroot\starter\index.html" />
+    <None Include="wwwroot\starter\listing.html" />
+    <None Include="wwwroot\starter\property-single.html" />
+    <None Include="wwwroot\starter\starter-license-W3Layouts.txt" />
+  </ItemGroup>
+
+</Project>
