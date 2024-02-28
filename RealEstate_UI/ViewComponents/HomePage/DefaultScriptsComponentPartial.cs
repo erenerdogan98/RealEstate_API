@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.ViewComponents.HomePage
 {
-    public class _DefaultScriptsComponentPartial : ViewComponent
+    public class DefaultScriptsComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

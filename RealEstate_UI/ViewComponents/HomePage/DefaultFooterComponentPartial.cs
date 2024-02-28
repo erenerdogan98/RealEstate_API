@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.ViewComponents.HomePage
 {
-    public class _DefaultFeatureComponentPartial : ViewComponent
+    public class DefaultFooterComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

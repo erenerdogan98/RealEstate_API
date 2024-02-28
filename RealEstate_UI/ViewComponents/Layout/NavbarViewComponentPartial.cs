@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace RealEstate_UI.ViewComponents.HomePage
+namespace RealEstate_UI.ViewComponents.Layout
 {
-    public class _DefaultHomePageProducts : ViewComponent
+    public class NavbarViewComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

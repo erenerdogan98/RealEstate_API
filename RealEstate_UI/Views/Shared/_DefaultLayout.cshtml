@@ -4,11 +4,11 @@ Author URL: http://w3layouts.com
 -->
 <!doctype html>
 <html lang="en">
-@await Component.InvokeAsync("_HeaderViewComponentPartial")
+@await Component.InvokeAsync("HeaderViewComponentPartial")
   <body>
 
 <!--header-->
-    @await Component.InvokeAsync("_NavbarViewComponentPartial")
+    @await Component.InvokeAsync("NavbarViewComponentPartial")
 
 <!--/header-->
 <section class="w3l-about-breadcrumb">
@@ -22,9 +22,9 @@ Author URL: http://w3layouts.com
 @RenderBody()
 <!-- //contacts -->
  <!-- footers 20 -->
-    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+    @await Component.InvokeAsync("DefaultFooterComponentPartial")
 
-    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+    @await Component.InvokeAsync("DefaultScriptsComponentPartial")
 
 </body>
 

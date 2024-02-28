@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.ViewComponents.HomePage
 {
-    public class _DefaultTestimonialComponentPartial : ViewComponent
+    public class DefaultSubFeatureComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

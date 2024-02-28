@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.ViewComponents.HomePage
 {
-    public class _DefaultSubFeatureComponentPartial : ViewComponent
+    public class DefaultDiscountOfDayComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

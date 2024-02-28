@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.ViewComponents.Layout
 {
-    public class _HeaderViewComponentPartial : ViewComponent
+    public class HeaderViewComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

@@ -2,8 +2,9 @@
 
 namespace RealEstate_UI.ViewComponents.HomePage
 {
-    public class _DefaultBrandComponentPartial : ViewComponent
+    public class DefaultHomePageProducts : ViewComponent
     {
+       
         public IViewComponentResult Invoke()
         {
             return View();
