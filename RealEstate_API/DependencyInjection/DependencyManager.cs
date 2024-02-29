@@ -16,6 +16,7 @@ namespace RealEstate_API.DependencyInjection
             services.AddScoped<IWhoWerAreDetailRepository, WhoWerAreDetailRepository>();
             services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<IBottomGridRepository, BottomGridRepository>();
+            services.AddScoped<IPopularLocationRepository, PopularLocationRepository>();
         }
     }
 }

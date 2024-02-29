@@ -8,7 +8,7 @@ namespace RealEstate_API.Repositories.CategoryRepository
     public class CategoryRepository(Context context) : ICategoryRepository
     {
         private readonly Context _context = context ?? throw new ArgumentNullException(nameof(context));
-        private readonly DynamicParameters parameters = new DynamicParameters();
+        private readonly DynamicParameters parameters = new();
 
         public async Task CreateCategory(CreateCategoryDto categoryDto)
         {
