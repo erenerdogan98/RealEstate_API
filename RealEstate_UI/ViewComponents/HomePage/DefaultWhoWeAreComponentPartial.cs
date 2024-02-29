@@ -17,7 +17,7 @@ namespace RealEstate_UI.ViewComponents.HomePage
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var value = JsonConvert.DeserializeObject<List<ResultWhoWeAreDetailDto>>(jsonData);
 
-                if (value != null && value.Any())
+                if (value != null && value.Count != 0)
                 {
                     var model = new WhoWeAreComponentModel
                     {
