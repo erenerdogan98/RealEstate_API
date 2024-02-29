@@ -35,7 +35,7 @@ namespace RealEstate_API.Controllers
             }
         }
         [HttpDelete("Deletepopularlocation/{id}")]
-        public async Task<IActionResult> DeleteBottomGridAsync(int id)
+        public async Task<IActionResult> DeletePopularLocationAsync(int id)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace RealEstate_API.Controllers
         }
 
         [HttpPut("updatepopularlocation")]
-        public async Task<IActionResult> UpdateBottomGridAsync(UpdatePopularLocationDto updatePopularLocation)
+        public async Task<IActionResult> UpdatePopularLocationAsync(UpdatePopularLocationDto updatePopularLocation)
         {
             if (updatePopularLocation == null)
             {
@@ -62,10 +62,10 @@ namespace RealEstate_API.Controllers
         }
 
         [HttpGet("GetPopularLocation{id}")]
-        public async Task<IActionResult> GetBottomGridAsync(int id)
+        public async Task<IActionResult> GetPopularLocationAsync(int id)
         {
-            var bottomGrid = await _popularLocationRepository.GetByIdAsync(id) ?? throw new InvalidOperationException($"Popular Location not found with id : {id}");
-            return Ok(bottomGrid);
+            var populerLocation = await _popularLocationRepository.GetByIdAsync(id) ?? throw new InvalidOperationException($"Popular Location not found with id : {id}");
+            return Ok(populerLocation);
         }
     }
 }
