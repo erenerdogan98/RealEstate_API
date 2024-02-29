@@ -14,6 +14,7 @@ namespace RealEstate_API.DependencyInjection
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IWhoWerAreDetailRepository, WhoWerAreDetailRepository>();
+            services.AddScoped<IServiceRepository, ServiceRepository>();
         }
     }
 }
