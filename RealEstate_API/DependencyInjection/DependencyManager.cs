@@ -18,6 +18,11 @@ namespace RealEstate_API.DependencyInjection
             services.AddScoped<IBottomGridRepository, BottomGridRepository>();
             services.AddScoped<IPopularLocationRepository, PopularLocationRepository>();
             services.AddScoped<ITestimonialRepository, TestimonialRepository>();
+            services.AddScoped<ISubFeatureRepository, SubFeatureRepository>();
+            services.AddScoped<IMailSubscribeRepository, MailSubscribeRepository>();
+            services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
         }
     }
 }
