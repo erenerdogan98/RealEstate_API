@@ -1,0 +1,13 @@
+﻿@model CreateCategoryDto
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h1>Adding New Category Page</h1>
+<form method="post">
+    <label>Category Name</label>
+    <input type="text" asp-for="Name" class="form-control"/>
+    <br />
+    <button class="btn btn-primary">Add Category</button>
+</form>

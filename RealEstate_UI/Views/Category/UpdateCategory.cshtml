@@ -1,0 +1,14 @@
+﻿@model UpdateCategoryDto
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h1>Update Category Page</h1>
+<form method="post" asp-action="UpdateCategory">
+    <input type="hidden" asp-for="Id" />
+    <label>Category Name</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Update Category</button>
+</form>
