@@ -23,6 +23,7 @@ namespace RealEstate_API.DependencyInjection
             services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
         }
     }
 }
