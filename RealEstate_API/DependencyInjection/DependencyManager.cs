@@ -24,6 +24,7 @@ namespace RealEstate_API.DependencyInjection
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IStatisticsRepository, StatisticsRepository>();
         }
     }
 }
