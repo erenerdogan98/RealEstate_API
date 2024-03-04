@@ -1,0 +1,46 @@
+﻿@model List<ResultBottomGridDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Bottom Grid List</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Icon</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Delete</th>
+                                <th scope="col">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Icon</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Description</td>
+                                    <td><a asp-controller="BottomGrid" asp-action="DeleteBottomGrid" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a asp-controller="BottomGrid" asp-action="UpdateBottomGrid" asp-route-id="@item.Id" class="btn btn-outline-success">Update</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a asp-controller="BottomGrid" asp-action="CreateBottomGrid" class="btn btn-outline-info">Add New Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
