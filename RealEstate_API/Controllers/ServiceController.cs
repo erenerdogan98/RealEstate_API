@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using RealEstate_API.Dtos.CategoryDtos;
+﻿using Microsoft.AspNetCore.Mvc;
 using RealEstate_API.Dtos.ServiceDtos;
 using RealEstate_API.Repositories.Abstract;
-using RealEstate_API.Repositories.CategoryRepository;
+
 
 namespace RealEstate_API.Controllers
 {
@@ -13,19 +11,18 @@ namespace RealEstate_API.Controllers
     {
         private readonly IServiceRepository _serviceRepository = serviceRepository ?? throw new ArgumentNullException(nameof(serviceRepository));
 
-        [HttpGet]
+        [HttpGet("services")]
         public async Task<IActionResult> Index()
         {
             var values = await _serviceRepository.GetAllAsync();
             return Ok(values);
         }
-        [HttpPost]
+        [HttpPost("CreateService")]
         public async Task<IActionResult> CreateService(CreateServiceDto createServiceDto)
         {
             if (createServiceDto == null)
             {
-                // Eğer categoryDto null ise BadRequest döndür
-                return BadRequest("Invalid category data");
+                return BadRequest("Invalid service data");
             }
             try
             {
@@ -34,8 +31,34 @@ namespace RealEstate_API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error adding category: {ex.Message}");
+                return BadRequest($"Error adding service: {ex.Message}");
             }
+        }
+        [HttpDelete("DeleteService/{id}")]
+        public async Task<IActionResult> DeleteServiceAsync(int id)
+        {
+            var value = await _serviceRepository.GetByIdAsync(id);
+            if (value != null)
+            {
+                await _serviceRepository.DeleteServiceAsync(id);
+                return Ok(" Deleted Successfully.");
+            }
+            return BadRequest($"Not found data with ID : {id}");
+
+        }
+
+        [HttpPut("UpdateService")]
+        public async Task<IActionResult> UpdateServiceAsync(ServiceDto serviceDto)
+        {
+            await _serviceRepository.UpdateServiceAsync(serviceDto);
+            return Ok("Updated successfully!");
+        }
+
+        [HttpGet("GetService/{id}")]
+        public async Task<IActionResult> GetServiceAsync(int id)
+        {
+            var category = await _serviceRepository.GetByIdAsync(id);
+            return Ok(category);
         }
     }
 }

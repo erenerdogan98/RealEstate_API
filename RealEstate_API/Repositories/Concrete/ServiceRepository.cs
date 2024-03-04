@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using RealEstate_API.Dtos.CategoryDtos;
 using RealEstate_API.Dtos.ServiceDtos;
 using RealEstate_API.Models.DapperContext;
 using RealEstate_API.Repositories.Abstract;
@@ -46,7 +45,7 @@ namespace RealEstate_API.Repositories.Concrete
 
         public async Task UpdateServiceAsync(ServiceDto updateServiceDto)
         {
-            string query = "UPDATE Category SET Name=@Name,Status=@Status WHERE Id=@Id";
+            string query = "UPDATE Service SET Name=@Name,Status=@Status WHERE Id=@Id";
             parameters.Add("@Name", updateServiceDto.Name);
             parameters.Add("@Status", updateServiceDto.Status);
             parameters.Add("@Id", updateServiceDto.Id);
