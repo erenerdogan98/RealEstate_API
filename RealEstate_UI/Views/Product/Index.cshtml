@@ -23,6 +23,7 @@
                                 <th scope="col">Delete</th>
                                 <th scope="col">Update</th>
                                 <th scope="col">See on site</th>
+                                <th scope="col">Deal of the Day</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,22 @@
                                     <td><a asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a></td>
                                     <td><a asp-controller="Product" asp-action="UpdateProduct" asp-route-id="@item.Id" class="btn btn-outline-success">Update</a></td>
                                     <td><a asp-controller="Product" asp-action="UpdateCategory" asp-route-id="@item.Id" class="btn btn-outline-success">See on site</a></td>
+@*                                     <td>
+                                        @if (item.DealOfTheDay == true)
+                                        {
+                                            <a asp-controller="Product" asp-action="ProductChangeDealOfTheDayStatus" asp-route-id="@item.Id" class="btn btn-outline-secondary">Make Passive</a>
+                                        }
+                                        @if (item.DealOfTheDay == false)
+                                        {
+                                            <a asp-controller="Product" asp-action="ProductChangeDealOfTheDayStatus" asp-route-id="@item.Id" class="btn btn-outline-warning">Make Active</a>
+                                        }
+                                    </td> *@
+                                    <td>
+                                        <a asp-controller="Product" asp-action="ProductChangeDealOfTheDayStatus" asp-route-id="@item.Id" class="btn @(item.DealOfTheDay ? "btn-outline-secondary" : "btn-outline-warning")">
+                                            @(item.DealOfTheDay ? "Make Passive" : "Make Active")
+                                        </a>
+                                    </td>
+
                                 </tr>
                             }
                         </tbody>

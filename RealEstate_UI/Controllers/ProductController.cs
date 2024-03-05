@@ -49,5 +49,17 @@ namespace RealEstate_UI.Controllers
             }
             return View();
         }
+        [HttpGet("ChangeDealoftheDayStatus/{id}")]
+        public async Task<IActionResult> ProductChangeDealOfTheDayStatus(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://localhost:44349/api/Product/ChaneDealOfTheDay/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            var errMessage = "Could not retrieve data from API. Please try again later.";
+            return Content(errMessage);
+        }
     }
 }
