@@ -6,5 +6,9 @@ namespace RealEstate_API.Repositories.Abstract
     {
         Task<List<ResultProductDto>> GetAllAsync();
         Task<List<ResultProductWithCategoryDto>> GetProductsWithCategory();
+        Task ChangeDealOfStatusAsync(int id);
+        Task<GetProductWithCategoryDto> GetProductWithCategoryAsync(int id);
+        Task<List<ResultLastFiveProductsDto>> GetlLastFiveRentedProductsAsync();
+
     }
 }

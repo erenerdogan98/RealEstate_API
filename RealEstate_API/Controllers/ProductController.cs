@@ -23,5 +23,32 @@ namespace RealEstate_API.Controllers
             return Ok(products);
         }
 
+        [HttpGet("ProductWithCategory/{id}")]
+        public async Task<IActionResult> GetProductWithCategory(int id)
+        {
+            var product = await _productRepository.GetProductWithCategoryAsync(id) ?? throw new ArgumentNullException($"No product found for this category with Id : {id}");
+            return Ok(product);
+        }
+
+        [HttpGet("ChaneDealOfTheDay/{id}")]
+        public async Task<IActionResult> ProductDealOfTheStatusChangeAsync(int id)
+        {
+            var product = await _productRepository.GetProductWithCategoryAsync(id);
+            if (product == null)
+                return NotFound();
+
+            product.DealOfTheDay = !product.DealOfTheDay;
+            await _productRepository.ChangeDealOfStatusAsync(id);
+
+            var statusMessage = product.DealOfTheDay ? "true" : "false";
+            return Ok($"Deal of the Day status changed to {statusMessage}.");
+        }
+
+        [HttpGet("LastFiveProducts")]
+        public async Task<IActionResult> GetLastFiveRentedProductsListAsync()
+        {
+            var lastFiveProducts = await _productRepository.GetlLastFiveRentedProductsAsync() ?? throw new ArgumentException("Can not get last five products");
+            return Ok(lastFiveProducts);
+        }
     }
 }
