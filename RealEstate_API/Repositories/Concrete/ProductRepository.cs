@@ -33,6 +33,15 @@ namespace RealEstate_API.Repositories.Concrete
             return values.ToList();
         }
 
+        public async Task<List<ResultProductAdvertsWithCategoryByEmployeeDto>> GetProductAdvertListByEmployeeAsync(int id)
+        {
+            string query = "SELECT Product.Id,Title,Price,CoverImage,City,District,Address,Description,Type,Name, DealOfTheDay FROM Product INNER JOIN Category ON CategoryId=Category.Id WHERE EmployeeId=@employeeId";
+            parameters.Add("@employeeId", id);
+            using var connection = _context.GetConnection();
+            var values = await connection.QueryAsync<ResultProductAdvertsWithCategoryByEmployeeDto>(query,parameters);
+            return values.ToList();
+        }
+
         public async Task<List<ResultProductWithCategoryDto>> GetProductsWithCategory()
         {
             string query = "SELECT Product.Id,Title,Price,CoverImage,City,District,Address,Description,Type,Name, DealOfTheDay FROM Product INNER JOIN Category ON Product.CategoryId=Category.Id";

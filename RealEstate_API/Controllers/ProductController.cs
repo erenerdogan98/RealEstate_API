@@ -50,5 +50,12 @@ namespace RealEstate_API.Controllers
             var lastFiveProducts = await _productRepository.GetlLastFiveRentedProductsAsync() ?? throw new ArgumentException("Can not get last five products");
             return Ok(lastFiveProducts);
         }
+
+        [HttpGet("ProductAdvertListByEmployee/{id}")]
+        public async Task<IActionResult> GetProductAdvertsByEmployeeAsync(int id)
+        {
+            var productsByEmployee = await _productRepository.GetProductAdvertListByEmployeeAsync(id) ?? throw new ArgumentException($"Can not get  product adverts by Employee with Employee Id : {id}");
+            return Ok(productsByEmployee);
+        }
     }
 }

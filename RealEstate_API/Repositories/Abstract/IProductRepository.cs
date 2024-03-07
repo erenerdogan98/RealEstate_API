@@ -5,6 +5,7 @@ namespace RealEstate_API.Repositories.Abstract
     public interface IProductRepository
     {
         Task<List<ResultProductDto>> GetAllAsync();
+        Task<List<ResultProductAdvertsWithCategoryByEmployeeDto>> GetProductAdvertListByEmployeeAsync(int id);
         Task<List<ResultProductWithCategoryDto>> GetProductsWithCategory();
         Task ChangeDealOfStatusAsync(int id);
         Task<GetProductWithCategoryDto> GetProductWithCategoryAsync(int id);
