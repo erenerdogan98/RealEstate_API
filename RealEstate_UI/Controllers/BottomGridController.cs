@@ -15,7 +15,7 @@ namespace RealEstate_UI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44349/api/BottomGrid/Bottomgrids\r\n");
+            var responseMessage = await client.GetAsync("https://localhost:44349/api/BottomGrid/Bottomgrids");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -46,7 +46,7 @@ namespace RealEstate_UI.Controllers
                 var jsonData = JsonConvert.SerializeObject(createBottomGrid);
                 StringContent stringContent = new(jsonData, Encoding.UTF8, dataType);
 
-                var responseMessage = await client.PostAsync("https://localhost:44349/api/BottomGrid/createbottomgrid\r\n", stringContent);
+                var responseMessage = await client.PostAsync("https://localhost:44349/api/BottomGrid/createbottomgrid", stringContent);
 
                 if (responseMessage.IsSuccessStatusCode)
                 {

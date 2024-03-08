@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate_API", "RealEstate_API\RealEstate_API.csproj", "{AF639A3C-3A75-494B-AAB0-3E21629866EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate_API", "RealEstate_API\RealEstate_API.csproj", "{AF639A3C-3A75-494B-AAB0-3E21629866EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate_UI", "RealEstate_UI\RealEstate_UI.csproj", "{94EAFFF9-5C8F-4AA4-A813-413DE2A23BE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEstate_UI", "RealEstate_UI\RealEstate_UI.csproj", "{94EAFFF9-5C8F-4AA4-A813-413DE2A23BE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

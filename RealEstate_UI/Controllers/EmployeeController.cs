@@ -1,20 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RealEstate_UI.Dtos.EmployeeDtos;
-using System.ComponentModel.DataAnnotations;
+using RealEstate_UI.Services;
 using System.Text;
 
 namespace RealEstate_UI.Controllers
 {
+    [Authorize]
     [Route("{controller}")]
-    public class EmployeeController(IHttpClientFactory httpClientFactory) : Controller
+    public class EmployeeController(IHttpClientFactory httpClientFactory,ILoginService loginService) : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
+        private readonly ILoginService _loginService = loginService;
         private readonly string dataType = "application/json";
 
         [HttpGet("Index")]
         public async Task<IActionResult> Index()
         {
+            var currentUser = User.Claims;
+            var currentUserId = _loginService.GetCurrentUserId ?? throw new ArgumentNullException("will logging.");
+            var token = User.Claims.FirstOrDefault(x => x.Type == "realestatetoken") ?? throw new InvalidDataException() ; // 'realestatetoken' in LoginController , Claim ,           
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44349/api/Employee/employees");
             if (responseMessage.IsSuccessStatusCode)

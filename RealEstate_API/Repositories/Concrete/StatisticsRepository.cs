@@ -65,7 +65,7 @@ namespace RealEstate_API.Repositories.Concrete
 
         public async Task<string> CategoryNameByMaxProductCountAsync()
         {
-            string query = "SELECT TOP(1) Name,Count(*) From Product INNER JOIN Category ON Product.CategoryId=Category.Id GROUP BY Name ORDER BY COUNT(*) DESC";
+            string query = "SELECT TOP(1) Name,Count(*) FROM Product JOIN Category ON Product.CategoryId=Category.Id GROUP BY Name ORDER BY COUNT(*) DESC";
             using var connection = _context.GetConnection();
             var categoryC = await connection.QueryFirstOrDefaultAsync<string>(query);
             return categoryC ?? throw new Exception("Category Name not found!");
@@ -89,7 +89,7 @@ namespace RealEstate_API.Repositories.Concrete
 
         public async Task<string> EmployeeNameByMaxProductCountAsync()
         {
-            string query = "SELECT COUNT(Distinct(City)) FROM Product";
+            string query = "SELECT TOP(1) Employee.Name, COUNT(*) AS 'product_count' FROM Product JOIN Employee ON Product.EmployeeId = Employee.Id GROUP BY Employee.Name ORDER BY product_count DESC";
             using var connection = _context.GetConnection();
             var employeeName = await connection.QueryFirstOrDefaultAsync<string>(query);
             return employeeName ?? throw new ArgumentNullException(nameof(employeeName));
